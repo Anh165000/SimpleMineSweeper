@@ -14,6 +14,7 @@ public class MapMine {
     private int remainingMines = 0;
     private int a[][] = new int[N][M];
     private Random rand = new Random();
+    private int countMineAroundI = 0;
 
     public MapMine() {
     }
@@ -70,100 +71,100 @@ public class MapMine {
             for (int j = 0; j < M - 1; j++) {
                 if (a[i][j] != MINENAME)
                     a[i][j] = countMineAround(i, j);
+                    countMineAroundI = 0;
             }
         }
     }
 
     public int countMineAround(int i, int j) {
-        int countMineAroundI = 0;
         if ((i > 0 && j > 0) && (i < 27 && j < 12)) {
             if (a[i - 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j] == MINENAME)
+            if (a[i - 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j + 1] == MINENAME)
+            if (a[i - 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j - 1] == MINENAME)
+            if (a[i][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j + 1] == MINENAME)
+            if (a[i][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j - 1] == MINENAME)
+            if (a[i + 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j] == MINENAME)
+            if (a[i + 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j + 1] == MINENAME)
+            if (a[i + 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
         } else if (i == 0 && (j > 0 && j < 12)) {
             if (a[i][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j + 1] == MINENAME)
+            if (a[i][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j - 1] == MINENAME)
+            if (a[i + 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j] == MINENAME)
+            if (a[i + 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j + 1] == MINENAME)
+            if (a[i + 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
         } else if (i == 27 && (j > 0 && j < 12)) {
             if (a[i - 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j] == MINENAME)
+            if (a[i - 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j + 1] == MINENAME)
+            if (a[i - 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j - 1] == MINENAME)
+            if (a[i][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j + 1] == MINENAME)
+            if (a[i][j + 1] == MINENAME)
                 countMineAroundI += 1;
         } else if ((j == 0) && (i > 0 && i < 27)) {
             if (a[i - 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j + 1] == MINENAME)
+            if (a[i - 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j + 1] == MINENAME)
+            if (a[i][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j] == MINENAME)
+            if (a[i + 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j + 1] == MINENAME)
+            if (a[i + 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
         } else if ((j == 12 && (i > 0 && i < 27))) {
             if (a[i - 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j] == MINENAME)
+            if (a[i - 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j - 1] == MINENAME)
+            if (a[i][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j - 1] == MINENAME)
+            if (a[i + 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j] == MINENAME)
+            if (a[i + 1][j] == MINENAME)
                 countMineAroundI += 1;
         } else if (i == 0 && j == 0) {
             if (a[i][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j] == MINENAME)
+            if (a[i + 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j + 1] == MINENAME)
+            if (a[i + 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
         } else if (i == 27 && j == 0) {
             if (a[i - 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j + 1] == MINENAME)
+            if (a[i - 1][j + 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j + 1] == MINENAME)
+            if (a[i][j + 1] == MINENAME)
                 countMineAroundI += 1;
         } else if (i == 0 && j == 12) {
             if (a[i][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j - 1] == MINENAME)
+            if (a[i + 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i + 1][j] == MINENAME)
+            if (a[i + 1][j] == MINENAME)
                 countMineAroundI += 1;
         } else if (i == 27 && j == 12) {
             if (a[i - 1][j - 1] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i - 1][j] == MINENAME)
+            if (a[i - 1][j] == MINENAME)
                 countMineAroundI += 1;
-            else if (a[i][j - 1] == MINENAME)
+            if (a[i][j - 1] == MINENAME)
                 countMineAroundI += 1;
         }
         return countMineAroundI;
@@ -345,11 +346,11 @@ public class MapMine {
 
     }
 
-    public static void main(String[] args) {
-        MapMine map = new MapMine();
-        map.getRandomMine();
-        map.checkMine();
-        map.outputMapMine();
-        System.out.println(map.getRemainingMines());
-    }
+//     public static void main(String[] args) {
+//         MapMine map = new MapMine();
+//         map.getRandomMine();
+//         map.checkMine();
+//         map.outputMapMine();
+//         System.out.println(map.getRemainingMines());
+//     }
 }
